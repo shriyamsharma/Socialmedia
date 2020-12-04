@@ -6,18 +6,6 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const {JWT_SECRET} = require('../config/keys');
 const requireLogin = require('../middleware/requireLogin');
-// const nodemailer = require('nodemailer');
-// const sendgridTransport = require('nodemailer-sendgrid-transport');
-
-// var options = {
-//     auth: {
-//         api_key: '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'
-//     }
-// }
-
-// const transporter = nodemailer.createTransport(sendgridTransport(options))
-
-// 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
 
 router.post('/signup', (req, res) => {
     const {name, email, password, pic} = req.body;
@@ -40,12 +28,6 @@ router.post('/signup', (req, res) => {
 
             user.save()
             .then(user => {
-                transporter.sendMail({
-                    to:user.email,
-                    from:"no-reply@socialmedia.com",
-                    subject: 'Sign Up successfully',
-                    html: '<h1>Welcome to Socialme-d-aa!</h1>'
-                })
                 res.json({message: "saved successfully"})
             })
             .catch(err=> {
