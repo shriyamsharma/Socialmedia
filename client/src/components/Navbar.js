@@ -36,7 +36,7 @@ const Navbar = () => {
     return (
       <nav>
         <div className="nav-wrapper black">
-          <Link to={state?"/":"/login"} className="brand-logo left">Instagram</Link>
+          <Link to={state?"/":"/login"} className="brand-logo left">SocialMe-d-aa</Link>
           <ul id="nav-mobile" className="right">
             {renderList()}
           </ul>

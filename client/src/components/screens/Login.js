@@ -41,6 +41,10 @@ const Login = () => {
             console.log(err);
         })
     }
+
+    function openTab() {
+        window.open('https://github.com/shriyamsharma');
+      }
     return(
         <div className="mycard">
             <div className="card auth-card">
@@ -64,6 +68,9 @@ const Login = () => {
                 >Login</button>
                 <h5>
                     <Link className="acc" to="/signup">Don't have an account?</Link>
+                </h5>
+                <h5>
+                    <Link style={{color:"black"}} onClick={openTab}>About Us <i class="small material-icons">forum</i></Link>
                 </h5>
             </div>
         </div>
